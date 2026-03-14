@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NU CGPA Calculator</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-ring">🎓</div>
+    <h1>NU CGPA Calculator</h1>
+    <p>জাতীয় বিশ্ববিদ্যালয়ের গ্রেডিং সিস্টেম অনুযায়ী</p>
+  </header>
+
+  <!-- OVERALL RESULT CARD -->
+  <div class="result-card" id="resultCard">
+    <div>
+      <div style="display:flex; align-items:baseline; gap:.4rem;">
+        <span class="cgpa-val" id="cgpaVal">0.00</span>
+        <span class="cgpa-sub">/ 4.00 Overall CGPA</span>
+      </div>
+      <div id="creditInfo" style="font-size:.78rem; color:var(--muted); margin-top:.25rem;">
+        Add courses to calculate
+      </div>
+    </div>
+    <div class="result-meta">
+      <div class="meta-item">
+        <div class="meta-val" id="totalCredit">0</div>
+        <div class="meta-key">Total Credits</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-val" id="totalCourses">0</div>
+        <div class="meta-key">Courses</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-val" id="totalYears">0</div>
+        <div class="meta-key">Years</div>
+      </div>
+    </div>
+    <span class="division-badge" id="divisionBadge">—</span>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-wrap">
+    <div class="progress-header">
+      <span style="color:var(--muted)">Overall CGPA Progress</span>
+      <span id="progressLabel" style="color:var(--accent); font-weight:600;">0%</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+    </div>
+    <div class="progress-ticks">
+      <span>0.00</span>
+      <span>2.00 Pass</span>
+      <span>3.00 1st Div</span>
+      <span>4.00</span>
+    </div>
+  </div>
+
+  <!-- YEARS SECTION -->
+  <div class="years-controls">
+    <div class="section-title">📅 Academic Years</div>
+    <button class="btn btn-reset-all" onclick="resetAll()">↺ Reset All</button>
+  </div>
+
+  <div id="yearsContainer"></div>
+
+  <button class="btn btn-add-year" onclick="addYear()"
+    style="width:100%; justify-content:center; margin-top:.5rem;">
+    ＋ Add Year
+  </button>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
